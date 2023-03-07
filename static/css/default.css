@@ -1,0 +1,66 @@
+:root{
+    --mainColor:#eaeaea;
+    --secondaryColor:#fff;
+    --borderColor:#c1c1c1;
+    --mainText:black;
+    --secondaryText:#4b5156;
+}
+
+html, body{
+    padding: 0;
+    margin: 0;
+    scroll-behavior: smooth;
+}
+
+h1, h2, h3, h4, h5, h6, strong{
+    color: var(--mainText);
+    font-family: 'Times New Roman', Times, sans-serif;
+    font-weight: 500;
+}
+
+h1{font-size: 56px;}
+h2{font-size: 36px;}
+h3{font-size: 28px;}
+h4{font-size: 24px;}
+h5{font-size: 20px;}
+h6{font-size: 16px;}
+
+p, li, span, label, input, textarea{
+    color: var(--secondaryText);
+    font-family:'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif'
+}
+
+a{
+    text-decoration: none;
+    color:chocolate
+}
+
+ul{
+    list-style: none;
+}
+
+table, th, td, tr{
+    border-collapse: collapse;
+    width: 100%;
+}
+
+#navigation a{
+    color:var(--mainText);
+}
+
+.s1{
+    background-color: var(--mainColor);
+    border-bottom:1px solid var(--borderColor);
+    overflow:auto;
+}
+
+.s2{
+    background-color:var(--secondaryColor);
+    border-bottom:1px solid var(--borderColor);
+    overflow:auto;
+}
+
+.main-container{
+    width: 1200px;
+    margin: 0 auto;
+}
