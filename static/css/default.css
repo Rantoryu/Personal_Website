@@ -91,6 +91,23 @@ table, th, td, tr{
 .nav-wrapper{
     grid-area: nav-wrapper;
     border:1px dashed lightcoral;
+    display:flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.dots-wrapper{
+
+}
+
+.browser-dot{
+    background-color: black;
+    height: 15px;
+    width: 15px;
+    border-radius: 15%;
+    -webkit-box-shadow: 1px 1px 3px -1px rgba(0,0,0,0.75);
+    -moz-box-shadow: -1px 1px 3px -1px rgba(0,0,0,0.75);
+    box-shadow: -1px 1px 3px -1px rgba(0,0,0,0.75);
 }
 
 .left-column{
