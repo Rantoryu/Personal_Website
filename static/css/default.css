@@ -235,6 +235,30 @@ table, th, td, tr{
     left: -5px;
 }
 
+.about-wrapper{
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+    padding-bottom: 50px;
+    padding-top: 50px;
+    gap: 100px;
+}
+
+#skills{
+    display: flex;
+    justify-content: space-evenly;
+    background-color: var(--previewShadow);
+}
+
+#social_img{
+    width: 100%;
+}
+
+.social-links{
+    display: grid;
+    align-content: center;
+    text-align: center;
+}
+
 @media screen and (max-width: 1200px){
     .main-container{
         width: 95%;
