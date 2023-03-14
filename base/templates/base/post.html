@@ -1,19 +1,117 @@
 {% extends 'base/main.html' %}
+{% load static %}
+{% block content %}
 
-<!DOCTYPE html>
-<html>
-    <head>
-        <meta charset="utf-8">
-        <meta http-equiv="X-UA-Compatible" content="IE=edge">
-        <title></title>
-        <meta name="description" content="">
-        <meta name="viewport" content="width=device-width, initial-scale=1">
-        <link rel="stylesheet" href="">
-    </head>
-    <body> 
-        {% block content %}
-        <h1>Post Template</h1>
-        {% endblock content %}
-        <script src="" async defer></script>
-    </body>
-</html>
+<style type="text/css">
+	img{
+		max-width: 100%;
+		object-fit: cover;
+	}
+
+	.featured_image{
+		margin-top: 20px;
+		margin-bottom: 20px;
+	}
+
+	.post-container{
+			width: 900px;
+			margin: 0 auto;
+			padding-top: 20px;
+			padding-bottom: 20px;
+	}
+
+	.comments-wrapper{
+		margin-top: 50px;
+		padding: 10px;
+		border:1px solid var(--borderColor);
+		-webkit-box-shadow: -1px 1px 3px -1px rgba(0,0,0,0.75);
+		-moz-box-shadow: -1px 1px 3px -1px rgba(0,0,0,0.75);
+		box-shadow: -1px 1px 3px -1px rgba(0,0,0,0.75);
+	}
+
+	.comment{
+		display: flex;
+		padding: 15px;
+	}
+
+	.comment-author{
+		font-size: 14px;
+		font-weight: 700;
+		color: rgb(30, 174, 219) !important;
+		margin: 2px;
+	}
+
+	.author-pic{
+		width: 50px;
+		height: 50px;
+		border-radius: 50%;
+		margin-right: 10px;
+	}
+
+	.comment-body{
+
+		font-size: 14px;
+	}
+
+	@media screen and (max-width: 900px){
+		.post-container{
+			width: 95%;
+		}
+	}
+</style>
+
+<div class="post-container">
+
+	<a class="btn btn-sm btn-primary" href="{% url 'posts' %}">&laquo Back to Posts</a>
+
+	{% if request.user.is_staff %}
+		 <a class="btn btn-sm btn-primary" href="{% url 'update_post' post.slug %}">Edit</a>
+		 <a class="btn btn-sm btn-danger" href="{% url 'delete_post' post.slug %}">Delete</a>
+	{% endif %}
+
+	<img class="featured_image" src="{{post.thumbnail.url}}">
+
+	{% for tag in post.tags.all %}
+		<span class="tag">{{tag}}</span>
+	{% endfor %}
+	<hr>
+
+	<h1>{{post.headline}}</h1>
+	<h4>{{post.sub_headline}}</h4>
+	<br>
+
+	<p>{{post.body|safe}}</p>
+
+	<div class="comments-wrapper">
+		<h5>Comments: {{post.postcomment_set.all.count}}</h5>
+		<hr>
+		<!--
+			- Not logged in, output form and say "Register to comment and give room for a message"
+			- When given username 
+		-->
+		{% if request.user.is_authenticated %}
+		<form action="" method="POST">
+			{% csrf_token %}
+			<textarea required class="form-control" placeholder="Leave a comment..." name="comment"></textarea>
+			<br>
+			<input class="btn btn-info" type="submit" value="Submit">
+		</form>
+		{% else %}
+			<p>Create an account to comment:</p>
+			<a class="btn btn-primary" href="{% url 'register' %}">Register/Login</a>
+		{% endif %}
+
+		<hr>
+		{% for comment in post.postcomment_set.all %}
+			<div class="comment">
+				<img class="author-pic" src="{{comment.author.profile_pic.url}}">
+				<div>
+					<p class="comment-author">{{comment.author}}: {{comment.created|date:"M-d-Y"}}</p>
+					<p class="comment-body">{{comment.body}}</p>
+				</div>
+			</div>
+		{% endfor %}
+	</div>
+</div>
+
+{% endblock content %}
