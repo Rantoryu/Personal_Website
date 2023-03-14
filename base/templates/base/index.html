@@ -7,6 +7,7 @@
         <meta name="description" content="">
         <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, minimum-scale=1">
         <link rel="stylesheet" href="default.css">
+        <link id="theme-style" rel="stylesheet" type="text/css" href="">
     </head>
     <script async src="https://www.googletagmanager.com/gtag/js?id=UA-47692315-56"></script>
     <script>
@@ -33,7 +34,7 @@
                             <div class="post-preview">
                                 <h6 class="post-title">Title of the post</h6>
                                 <p class="post-intro">This is a sentence. Some more text</p>
-                                <a href="#">Read More</a>
+                                <a href="post.html">Read More</a>
                             </div>
                         </div>
                     </div>
@@ -80,10 +81,10 @@
                         <h5 style="text-align: center;line-height: 0;">Personalize Theme</h5>
 
                         <div id="theme-options-wrapper">
-                            <div id="light-mode" class="theme-dot"></div>
-                            <div id="blue-mode" class="theme-dot"></div>
-                            <div id="green-mode" class="theme-dot"></div>
-                            <div id="purple-mode" class="theme-dot"></div>
+                            <div data-mode="light" id="light-mode" class="theme-dot"></div>
+                            <div data-mode="blue" id="blue-mode" class="theme-dot"></div>
+                            <div data-mode="green" id="green-mode" class="theme-dot"></div>
+                            <div data-mode="purple" id="purple-mode" class="theme-dot"></div>
                         </div>
                         <p id="settings-note">*Theme settings will be saved for <br>your next visit</p>
                     </div>
@@ -156,5 +157,6 @@
                 </div>
             </div>
         </section>
+        <script type="text/Javascript" src="script.js"></script>
     </body>
 </html>

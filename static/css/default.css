@@ -16,6 +16,10 @@ html, body{
     scroll-behavior: smooth;
 }
 
+body *{
+    transition: 0.5s;
+}
+
 h1, h2, h3, h4, h5, h6, strong{
     color: var(--mainText);
     font-family: 'Russo One', sans-serif;
@@ -99,6 +103,10 @@ table, th, td, tr{
     align-items: center;
     background-color: var(--mainColor);
     border-radius: 5px 5px 0 0;
+}
+
+#navigation a{
+    color:var(--mainText);
 }
 
 #navigation{
