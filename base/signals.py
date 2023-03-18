@@ -12,7 +12,6 @@ def create_profile(sender, instance, created, **kwargs):
 			)
 		print("Profile Created!")
 
-
 def update_profile(sender, instance, created, **kwargs):
 	if created == False:
 		instance.profile.first_name = instance.first_name
@@ -23,7 +22,6 @@ def update_profile(sender, instance, created, **kwargs):
 
 post_save.connect(create_profile, sender=User)
 post_save.connect(update_profile, sender=User)
-
 
 def update_username(sender, instance, **kwargs):
 	instance.username = instance.email

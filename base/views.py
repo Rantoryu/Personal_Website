@@ -78,7 +78,6 @@ def createPost(request):
 	context = {'form':form}
 	return render(request, 'base/post_form.html', context)
 
-
 @admin_only
 @login_required(login_url="home")
 def updatePost(request, slug):
@@ -104,8 +103,6 @@ def deletePost(request, slug):
 		return redirect('posts')
 	context = {'item':post}
 	return render(request, 'base/delete.html', context)
-
-
 
 def sendEmail(request):
 
@@ -202,7 +199,6 @@ def updateProfile(request):
 		if form.is_valid():
 			form.save()
 			return redirect('account')
-
 
 	context = {'form':form}
 	return render(request, 'base/profile_form.html', context)
