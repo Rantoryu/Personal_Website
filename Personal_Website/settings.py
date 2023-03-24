@@ -153,3 +153,9 @@ CKEDITOR_CONFIGS = {
 # https://docs.djangoproject.com/en/4.1/ref/settings/#default-auto-field
 
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
+
+#ReCAPTCHA v2
+
+RECAPTCHA_PUBLIC_KEY = ''
+RECAPTCHA_PRIVATE_KEY = ''
+SILENCED_SYSTEM_CHECKS = ['captcha.recaptcha_test_key_error']
