@@ -47,6 +47,7 @@ INSTALLED_APPS = [
     'ckeditor',
     'ckeditor_uploader',
     'storages',
+    'captcha',
 ]
 
 MIDDLEWARE = [
@@ -156,6 +157,6 @@ DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 
 #ReCAPTCHA v2
 
-RECAPTCHA_PUBLIC_KEY = ''
-RECAPTCHA_PRIVATE_KEY = ''
+RECAPTCHA_PUBLIC_KEY = '6LclFzAlAAAAAFg_zdeSWmofrP95oNI0VRKF9_Lt'
+RECAPTCHA_PRIVATE_KEY = '6LclFzAlAAAAAPdEjbr92NLo_m3sWUFWobuWwj0w'
 SILENCED_SYSTEM_CHECKS = ['captcha.recaptcha_test_key_error']
