@@ -109,8 +109,8 @@ def sendEmail(request):
 	if request.method == 'POST':
 
 		template = render_to_string('base/email_template.html', {
-			'name':request.POST['name'],
 			'email':request.POST['email'],
+			'name':request.POST['name'],
 			'message':request.POST['message'],
 			})
 
