@@ -144,7 +144,6 @@ h6 { font-size: 16px;}
 
 }
 
-
 /* DROP DOWN MENU START */
 
 #menu-icon{
@@ -200,7 +199,6 @@ h6 { font-size: 16px;}
 
 /* DROP DOWN MENU END */
 
-
 .left-column{
 	grid-area: left-column;
 	padding-top:50px;
@@ -216,7 +214,6 @@ h6 { font-size: 16px;}
 	object-fit: cover;
 	border:2px solid var(--borderColor);
 }
-
 
 #theme-options-wrapper{
 	display: flex;
@@ -238,7 +235,6 @@ h6 { font-size: 16px;}
 
 	cursor: pointer;
 }
-
 
 .theme-dot:hover{
 	border-width: 5px;
@@ -349,7 +345,6 @@ h6 { font-size: 16px;}
 	width: 100%;
 }
 
-
 .post-wrapper{
 	display: grid;
 	grid-template-columns: repeat(auto-fit, 320px);
@@ -396,7 +391,6 @@ h6 { font-size: 16px;}
 	padding: 2px 5px;
 	font-size: 12px;	
 }
-
 
 #contact-form{
 	display: block;
