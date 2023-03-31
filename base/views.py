@@ -11,7 +11,7 @@ from django.contrib.auth import logout, login, authenticate
 from django.contrib.auth.forms import UserCreationForm
 from .decorators import *
 
-from .forms import PostForm, CustomUserCreationForm, ProfileForm, UserForm
+from .forms import PostForm, CustomUserCreationForm, ProfileForm, UserForm, FormWithCaptcha
 from .filters import PostFilter
 
 from .models import *
@@ -148,7 +148,9 @@ def loginPage(request):
 		else:
 			messages.error(request, 'Email OR password is incorrect')
 
-	context = {}
+	context = {
+		"captcha": FormWithCaptcha
+	}
 	return render(request, 'base/login.html', context)
 
 def registerPage(request):
@@ -171,7 +173,7 @@ def registerPage(request):
 			return redirect(next_url)
 		else:
 			messages.error(request, 'An error has occured with registration')
-	context = {'form':form}
+	context = {'form':form, "captcha": FormWithCaptcha}
 	return render(request, 'base/register.html', context)
 
 def logoutUser(request):
