@@ -10,7 +10,6 @@ class CustomUserCreationForm(UserCreationForm):
 	class Meta:
 		model = User
 		fields = ['first_name', 'last_name', 'email', 'password1', 'password2']
-		captcha = ReCaptchaField(widget=ReCaptchaV2Checkbox)
 
 class PostForm(ModelForm):
 	class Meta:
@@ -30,3 +29,6 @@ class ProfileForm(ModelForm):
 		model = Profile
 		fields = '__all__'
 		exclude = ['user']
+
+class FormWithCaptcha(forms.Form):
+    captcha = ReCaptchaField(label='')
