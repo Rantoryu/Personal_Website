@@ -3,7 +3,7 @@
 Portfolio project of my personal website.
 Live version: https://web-production-a717.up.railway.app
 
-<a href="https://web-production-a717.up.railway.app/" target="_blank"><img align="left" alt="GIT" style="padding-right:10px;" src="https://i.imgur.com/9ic1rYD.png"/></a><br>
+<a href="https://dominikmigrala.up.railway.app/" target="_blank"><img align="left" alt="GIT" style="padding-right:10px;" src="https://i.imgur.com/9ic1rYD.png"/></a><br>
 
 <br>
 
