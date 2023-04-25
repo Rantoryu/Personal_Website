@@ -63,7 +63,6 @@ def post(request, slug):
 def profile(request):
 	return render(request, 'base/profile.html')
 
-#CRUD VIEWS
 @admin_only
 @login_required(login_url="home")
 def createPost(request):
@@ -134,7 +133,6 @@ def loginPage(request):
 		email = request.POST.get('email')
 		password =request.POST.get('password')
 
-		#Little Hack to work around re-building the usermodel
 		try:
 			user = User.objects.get(email=email)
 			user = authenticate(request, username=user.username, password=password)
